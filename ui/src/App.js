@@ -1,10 +1,25 @@
 import React from 'react';
+import Button from './components/common/Button';
 import './register-css';
 
 const App = () => {
   return (
     <div>
-      <h1>Pelando - Vídeos</h1>
+      <Button action="primary">
+        Primary Button
+      </Button>
+      <Button>
+        Default Button
+      </Button>
+      <Button action="danger">
+        Danger Button
+      </Button>
+      <Button action="warning">
+        Warning Button
+      </Button>
+      <Button action="success">
+        Success Button
+      </Button>
     </div>
   );
 }
