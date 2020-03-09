@@ -1,46 +1,48 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useField, useFormikContext } from 'formik';
+import InputContainer from './InputContainer';
 
 const Input = ({
-  label, onChange, ...props
+  label, className, onChange, ...props
 }) => {
   const [field, meta] = useField(props);
   const { setFieldValue } = useFormikContext();
 
   return (
-    <div>
-      <input
-        {...field}
-        {...props}
-        onChange={(event) => {
-          setFieldValue(field.name, event.target.value);
-          if (onChange) {
-            onChange(event.target.value);
-          }
-        }}
-      />
-      {label && (
+    <InputContainer className="mr-4">
+      <div>
+        <input
+          {...field}
+          {...props}
+          onChange={(event) => {
+            setFieldValue(field.name, event.target.value);
+            if (onChange) {
+              onChange(event.target.value);
+            }
+          }}
+        />
         <label
           htmlFor={field.name}
         >
           {label}
         </label>
-      )}
+      </div>
       {meta.error && <span>{meta.error}</span>}
-    </div>
+    </InputContainer>
   );
 };
 
 Input.propTypes = {
   onChange: PropTypes.func,
   label: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Input.defaultProps = {
   onChange: null,
   label: '',
+  className: '',
 };
 
 export default Input;
