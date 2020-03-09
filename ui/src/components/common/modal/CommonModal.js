@@ -14,17 +14,17 @@ const CommonModal = ({
     isOpen={isModalOpen}
   >
     {title && (
-    <div className="flex justify-between align-center">
+    <div className="flex justify-between items-center">
       <h2>{title}</h2>
       <ActionButton
         type="button"
         onClick={onCloseModal}
       >
-        <FontAwesomeIcon icon="minus" />
+        <FontAwesomeIcon icon="times" />
       </ActionButton>
     </div>
     )}
-    <div>
+    <div className="mt-3">
       {children}
     </div>
   </Modal>

@@ -67,7 +67,7 @@ const VideoPlayer = ({
 };
 
 VideoPlayer.propTypes = {
-  isPlaying: PropTypes.string.isRequired,
+  isPlaying: PropTypes.string,
   video: PropTypes.objectOf(PropTypes.any).isRequired,
   onRemoveVideo: PropTypes.func,
   onChangeVideoStatus: PropTypes.func.isRequired,
@@ -76,6 +76,7 @@ VideoPlayer.propTypes = {
 };
 
 VideoPlayer.defaultProps = {
+  isPlaying: null,
   onRemoveVideo: null,
   onAddVideo: () => {},
 };

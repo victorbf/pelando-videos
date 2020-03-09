@@ -1,19 +1,11 @@
-import React, { useContext } from 'react';
-import { DataForm } from '../components/form_inputs';
+import React from 'react';
 import VideosList from '../containers/VideosList';
-import VideosContext from '../contexts/VideosContext';
+import VideosState from '../states/VideosState';
 
-const VideosListPage = () => {
-  const { getVideos } = useContext(VideosContext);
-
-  return (
-    <DataForm
-      onSubmit={getVideos}
-      className="container mx-auto"
-    >
-      <VideosList />
-    </DataForm>
-  );
-};
+const VideosListPage = () => (
+  <VideosState>
+    <VideosList />
+  </VideosState>
+);
 
 export default VideosListPage;

@@ -40,8 +40,12 @@ const VideosState = ({ children }) => {
     if (!isUrl) {
       dispatch({ type: SET_MODAL });
     }
+    const token = localStorage.getItem('token');
     const params = {
-      key: 'AIzaSyBlGC6Hk-02jCW9vIGCXuqJdEOU4cRxudc',
+      access_token: token,
+      token_type: 'Bearer',
+      expires_in: 3920,
+      scope: 'https://www.googleapis.com/auth/youtube, https://www.googleapis.com/auth/youtube.readonly, https://www.googleapis.com/auth/youtube.upload, https://www.googleapis.com/auth/youtubepartner-channel-audit',
       q: values.search,
       part: 'id, snippet',
       maxResults: 4,
@@ -49,7 +53,10 @@ const VideosState = ({ children }) => {
     const videosData = await fetchVideosSearch(params);
     const videosIds = videosData.items.map((item) => item.id.videoId);
     const videosParams = {
-      key: 'AIzaSyBlGC6Hk-02jCW9vIGCXuqJdEOU4cRxudc',
+      access_token: token,
+      token_type: 'Bearer',
+      expires_in: 3920,
+      scope: 'https://www.googleapis.com/auth/drive.file',
       id: videosIds.join(', '),
       part: 'snippet, player',
     };
@@ -74,8 +81,9 @@ const VideosState = ({ children }) => {
   const normalizeString = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
   const handleFilter = (values) => {
-    selectedVideos.filter((selectedVideo) => (
-      normalizeString(get(selectedVideo, 'snippet.title', '')).includes(normalizeString(values.filter))));
+    const filteredVideos = selectedVideos.filter((selectedVideo) => (
+      normalizeString(get(selectedVideo, 'snippet.title', '').split(' ')).includes(normalizeString(values.filter))));
+    dispatch({ type: SET_SELECTED_VIDEOS, payload: filteredVideos});
   };
 
   const handlePlay = () => {
