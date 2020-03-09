@@ -1,12 +1,12 @@
 import React from 'react';
-import './register-css';
+import './config';
+import VideosListPage from './pages/VideosListPage';
+import VideosState from './states/VideosState';
 
-const App = () => {
-  return (
-    <div>
-      <h1>Pelando - Vídeos</h1>
-    </div>
-  );
-}
+const App = () => (
+  <VideosState>
+    <VideosListPage />
+  </VideosState>
+);
 
 export default App;

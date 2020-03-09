@@ -22,8 +22,11 @@ const currentBGColor = (props) => {
 const Button = styled.button`
   background: ${(props) => currentBGColor(props.action)};
   color: ${(props) => props.action && White};
-  padding: 0.5rem 2rem;
+  padding: 0 0.5rem;
   border: 1px solid ${SecondaryColor};
+  min-width: 150px;
+  border-radius: 20px;
+  font-size: 14px;
 `;
 
 export default Button;
