@@ -3,11 +3,12 @@ import { useFormikContext } from 'formik';
 import { Input } from '../form_inputs';
 import Button from '../common/Button';
 import VideosContext from '../../contexts/VideosContext';
+import FormVideo from './FormVideo';
 
 const SearchVideos = () => {
-  const { setFieldValue } = useFormikContext();
+  const { setFieldValue, values } = useFormikContext();
   const {
-    isValueURL, isUrl, getVideos, values,
+    isValueURL, isUrl, getVideos, loadingVideos,
   } = useContext(VideosContext);
 
   const urlVideoSearch = () => {
@@ -16,7 +17,7 @@ const SearchVideos = () => {
   };
 
   return (
-    <div className="flex items-center">
+    <FormVideo>
       <Input
         onChange={isValueURL}
         type="text"
@@ -28,16 +29,17 @@ const SearchVideos = () => {
           action="primary"
           type="button"
           onClick={urlVideoSearch}
+          disabled={loadingVideos}
         >
           Adicionar
         </Button>
       ) : (
-        <Button action="primary" type="submit">
+        <Button action="primary" type="submit" disabled={loadingVideos}>
           Buscar
         </Button>
       )}
-    </div>
-  )
-}
+    </FormVideo>
+  );
+};
 
 export default SearchVideos;

@@ -32,6 +32,7 @@ const ActionButton = styled.button`
   left: ${(props) => (props.left ? '20px' : 'inherit')};
   right: ${(props) => (props.right ? '20px' : 'inherit')};
   bottom: 3rem;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
   background: ${(props) => BackgroundColor(props.color)};
   width: 40px;
   height: 40px;

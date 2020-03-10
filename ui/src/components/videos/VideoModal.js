@@ -1,13 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import CommonModal from '../common/modal/CommonModal';
-import GridContainer from '../common/grid/GridContainer';
-import VideoPlayer from '../common/videoplayer/VideoPlayer';
+import VideoModalContent from './VideoModalContent';
 import VideosContext from '../../contexts/VideosContext';
 
 const VideoModal = () => {
   const {
-    videos, isVideosModalOpen, handleModal,
-    isPlaying, handleAddVideo, handleVideo,
+    isVideosModalOpen, handleModal,
   } = useContext(VideosContext);
 
   return (
@@ -16,22 +14,9 @@ const VideoModal = () => {
       isModalOpen={isVideosModalOpen}
       onCloseModal={handleModal}
     >
-      <GridContainer
-        columns="2"
-      >
-        {videos.map((video, index) => (
-          <VideoPlayer
-            key={video.id}
-            index={index + 1}
-            isPlaying={isPlaying}
-            video={video}
-            onAddVideo={handleAddVideo}
-            onChangeVideoStatus={handleVideo}
-          />
-        ))}
-      </GridContainer>
+      <VideoModalContent />
     </CommonModal>
-  )
-}
+  );
+};
 
 export default VideoModal;

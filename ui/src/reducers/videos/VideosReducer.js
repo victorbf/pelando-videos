@@ -3,6 +3,7 @@ import {
   SET_IS_URL, SET_SELECTED_VIDEO,
   REMOVE_SELECTED_VIDEO, SET_SELECTED_VIDEOS,
   SET_VIDEOS_FILTER, SET_VIDEO_STATUS,
+  SET_VIDEO_LOADING,
 } from './types';
 
 const VideosReducer = (state, action) => {
@@ -14,12 +15,15 @@ const VideosReducer = (state, action) => {
       return {
         ...state,
         videos: payload.items,
+        loadingVideos: false,
       };
+
     case SET_SELECTED_VIDEOS:
       return {
         ...state,
         selectedVideos: payload,
       };
+
     case SET_MODAL:
       return {
         ...state,
@@ -55,6 +59,12 @@ const VideosReducer = (state, action) => {
       return {
         ...state,
         isPlaying: payload,
+      };
+
+    case SET_VIDEO_LOADING:
+      return {
+        ...state,
+        loadingVideos: payload,
       };
 
     default: return state;

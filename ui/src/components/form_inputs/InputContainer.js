@@ -5,13 +5,10 @@ const InputContainer = styled.div`
 
   input {
     border: 1px solid #eee;
-    border-radius: 20px;
+    border-radius: 3px;
     width: 100%;
-
-    &::placeholder {
-      padding: 0.5rem;
-      font-size: 14px;
-    };
+    padding: 0.3rem 0.5rem;
+    font-size: 14px;
   }
 `;
 

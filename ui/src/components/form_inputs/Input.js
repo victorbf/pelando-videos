@@ -10,7 +10,7 @@ const Input = ({
   const { setFieldValue } = useFormikContext();
 
   return (
-    <InputContainer className="mr-4">
+    <InputContainer>
       <div>
         <input
           {...field}

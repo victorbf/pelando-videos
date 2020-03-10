@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { get } from 'lodash';
 import ReactPlayer from 'react-player';
+import EnterAnimation from '../animations/Animations';
+import VideoPlayerContainer from './VideoPlayerContainer';
 import ActionButton from '../ActionButton';
 import VideoLabel from './VideoLabel';
 import VideosContext from '../../../contexts/VideosContext';
@@ -10,31 +12,32 @@ import VideosContext from '../../../contexts/VideosContext';
 const VideoPlayer = ({
   isPlaying, video, onRemoveVideo,
   onChangeVideoStatus, index, onAddVideo,
+  ...props
 }) => {
   const { selectedVideos } = useContext(VideosContext);
   const isSelected = selectedVideos.some((selectedVideo) => selectedVideo.id === video.id);
-
   return (
-    <div className="relative">
-      <ReactPlayer
-        url={`https://www.youtube.com/watch?v=${video.id}`}
-        playing={isPlaying === video.id}
-        width="250"
-      />
-      <ActionButton
-        left
-        absolute
-        color="primary"
-        type="button"
-        onClick={() => onChangeVideoStatus(isPlaying === video.id ? null : video.id)}
-      >
-        {isPlaying === video.id ? (
-          <FontAwesomeIcon icon="pause" />
-        ) : (
-          <FontAwesomeIcon icon="play" />
-        )}
-      </ActionButton>
-      {
+    <EnterAnimation {...props}>
+      <VideoPlayerContainer>
+        <ReactPlayer
+          url={`https://www.youtube.com/watch?v=${video.id}`}
+          playing={isPlaying === video.id}
+          width="250"
+        />
+        <ActionButton
+          left
+          absolute
+          color="primary"
+          type="button"
+          onClick={() => onChangeVideoStatus(isPlaying === video.id ? null : video.id)}
+        >
+          {isPlaying === video.id ? (
+            <FontAwesomeIcon icon="pause" />
+          ) : (
+            <FontAwesomeIcon icon="play" />
+          )}
+        </ActionButton>
+        {
       onRemoveVideo
         ? (
           <ActionButton
@@ -58,11 +61,12 @@ const VideoPlayer = ({
           </ActionButton>
         )
     }
-      <VideoLabel
-        number={index}
-        label={get(video, 'snippet.title')}
-      />
-    </div>
+        <VideoLabel
+          number={index}
+          label={get(video, 'snippet.title')}
+        />
+      </VideoPlayerContainer>
+    </EnterAnimation>
   );
 };
 
