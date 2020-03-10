@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4d4ec9b5e1c9525d365d0d96f2e3f0a4",
+    "revision": "c9f2296da3bcbc36ee9a22a0ae129fa0",
     "url": "/pelando-videos/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pelando-videos/static/css/2.5dbdccff.chunk.css"
   },
   {
-    "revision": "945eddf66ac522fe7070",
+    "revision": "517042677e922120c408",
     "url": "/pelando-videos/static/css/main.92dcd69c.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pelando-videos/static/js/2.479116a6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "945eddf66ac522fe7070",
-    "url": "/pelando-videos/static/js/main.37b843d7.chunk.js"
+    "revision": "517042677e922120c408",
+    "url": "/pelando-videos/static/js/main.b34d0312.chunk.js"
   },
   {
     "revision": "729de6cc5e9507661970",

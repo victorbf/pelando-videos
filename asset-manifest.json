@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pelando-videos/static/css/main.92dcd69c.chunk.css",
-    "main.js": "/pelando-videos/static/js/main.37b843d7.chunk.js",
-    "main.js.map": "/pelando-videos/static/js/main.37b843d7.chunk.js.map",
+    "main.js": "/pelando-videos/static/js/main.b34d0312.chunk.js",
+    "main.js.map": "/pelando-videos/static/js/main.b34d0312.chunk.js.map",
     "runtime-main.js": "/pelando-videos/static/js/runtime-main.20a059b1.js",
     "runtime-main.js.map": "/pelando-videos/static/js/runtime-main.20a059b1.js.map",
     "static/css/2.5dbdccff.chunk.css": "/pelando-videos/static/css/2.5dbdccff.chunk.css",
     "static/js/2.479116a6.chunk.js": "/pelando-videos/static/js/2.479116a6.chunk.js",
     "static/js/2.479116a6.chunk.js.map": "/pelando-videos/static/js/2.479116a6.chunk.js.map",
     "index.html": "/pelando-videos/index.html",
-    "precache-manifest.2a01cf20d02288decbe4a0a2ca2f8598.js": "/pelando-videos/precache-manifest.2a01cf20d02288decbe4a0a2ca2f8598.js",
+    "precache-manifest.f68ebcea8131d3e3503a3d96c3330e4a.js": "/pelando-videos/precache-manifest.f68ebcea8131d3e3503a3d96c3330e4a.js",
     "service-worker.js": "/pelando-videos/service-worker.js",
     "static/css/2.5dbdccff.chunk.css.map": "/pelando-videos/static/css/2.5dbdccff.chunk.css.map",
     "static/css/main.92dcd69c.chunk.css.map": "/pelando-videos/static/css/main.92dcd69c.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.5dbdccff.chunk.css",
     "static/js/2.479116a6.chunk.js",
     "static/css/main.92dcd69c.chunk.css",
-    "static/js/main.37b843d7.chunk.js"
+    "static/js/main.b34d0312.chunk.js"
   ]
 }

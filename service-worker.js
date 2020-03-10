@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pelando-videos/precache-manifest.2a01cf20d02288decbe4a0a2ca2f8598.js"
+  "/pelando-videos/precache-manifest.f68ebcea8131d3e3503a3d96c3330e4a.js"
 );
 
 self.addEventListener('message', (event) => {
